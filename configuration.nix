@@ -63,6 +63,11 @@
   };
   services.blueman.enable = true;
 
+  # Power profiles daemon
+  services.power-profiles-daemon = {
+    enable = true;
+  };
+
   # VIDEO NVIDIA
   services.xserver.videoDrivers = ["nvidia"];
   # services.xserver.videoDrivers = ["noveau"];
@@ -143,6 +148,7 @@
     gtk4
     qt5.full
     qt6.full
+    power-profiles-daemon
 
     # Input
     via
@@ -173,6 +179,8 @@
     bat
     ripgrep
     fd
+    neofetch
+    fortune
 
     # Browser
     firefox
@@ -216,17 +224,23 @@
     rustc
     cargo
     gcc
+    llvmPackages_19.libcxxClang
     hyprlang
     jdk
     nodejs_18
     python3Full
     eww
 
+    # Libraries
+    wayland
+
     # LSP
     lua-language-server
     nixd
     hyprls
     vscode-langservers-extracted
+    llvmPackages_19.clang-tools
+    rust-analyzer
 
     # Code Formatters
     stylua
